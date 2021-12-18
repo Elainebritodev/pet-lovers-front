@@ -3,20 +3,21 @@ import { useFormik } from 'formik';
 import { Form, Col, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import TemplatePrivate from '../../templates/TemplatePrivate/TemplatePrivate';
 
-import { createOneNewPet } from '../../../services/api';
-import './NewPet.css';
+import { editOnePet } from '../../../services/api';
+import '../NewPet/NewPet.css';
 
 const schema = yup.object().shape({
-  name: yup.string().required('Required Field').min(3, 'Minimum of 3 characters').max(100, 'Maximum of 100 characters'),
+  name: yup.string(),
   description: yup.string().max(100, 'Maximum of 150 characters'),
   photography: yup.string(),
 });
 
-const NewPet = () => {
+const EditPet = () => {
+  const { petId } = useParams();
   const [pet, setPet] = useState({});
   const navigate = useNavigate();
   const {
@@ -29,7 +30,7 @@ const NewPet = () => {
     onSubmit: async (formData) => {
       console.log('FORM SUBMETIDO', formData);
       const token = localStorage.getItem('token');
-      await createOneNewPet(formData, token);
+      await editOnePet(petId, formData, token);
 
       // eslint-disable-next-line no-use-before-define
       handleLimpaTudo();
@@ -45,6 +46,7 @@ const NewPet = () => {
 
   return (
     <TemplatePrivate>
+      <h1>Edit Form</h1>
       <Form onSubmit={handleSubmit}>
 
         <Form.Group as={Col} md="12" controlId="new-pet-form">
@@ -89,7 +91,7 @@ const NewPet = () => {
           <Form.Control.Feedback>Ok!</Form.Control.Feedback>
         </Form.Group>
 
-        <Button type="submit" siz="lg" className="new-pet-submit-button">Create</Button>
+        <Button type="submit" siz="lg" className="new-pet-submit-button">Edit</Button>
       </Form>
 
     </TemplatePrivate>
@@ -97,4 +99,4 @@ const NewPet = () => {
 
 };
 
-export default NewPet;
+export default EditPet;

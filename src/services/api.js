@@ -51,10 +51,13 @@ export const createOneNewPet = async (body, token) => {
 };
 
 export const editOnePet = async (petId, body, token) => {
-  console.log(token);
-  console.log(body);
-  console.log(petId);
-  const response = await api.put('/pet/61bd46280b46ec49f248349c', body, setHeaders(token));
+  const response = await api.put(`/pet/${petId}`, body, setHeaders(token));
+
+  return response.data;
+};
+
+export const deletePet = async (petId, token) => {
+  const response = await api.delete(`/pet/${petId}`, setHeaders(token));
 
   return response.data;
 };

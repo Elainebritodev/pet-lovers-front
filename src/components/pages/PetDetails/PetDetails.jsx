@@ -45,6 +45,9 @@ const MyPets = () => {
       <Link to={`/my-pets-edit/${petId}`}>
         <h1><strong>Edit</strong></h1>
       </Link>
+      <Link to={`/my-pets-delete/${petId}`}>
+        <h1><strong>Delete</strong></h1>
+      </Link>
 
     </TemplatePrivate>
   );

@@ -54,7 +54,7 @@ const MyPets = () => {
           <Link className="pets-card" key={pet._id} to={`/my-pets/${pet._id}`}>
             <p>{pet.name}</p>
             <div className="card" style={{ width: "18rem" }}>
-              <img src="..." className="card-img" alt="..." />
+              <img src={pet.photography} className="card-img" alt="..." />
             </div>
           </Link>
         ))}

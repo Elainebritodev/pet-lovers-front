@@ -9,6 +9,7 @@ import MyPets from './components/pages/MyPets/MyPets';
 import PetDetails from './components/pages/PetDetails/PetDetails';
 import NewPet from './components/pages/NewPet/NewPet';
 import EditPet from './components/pages/Edit/EditPet';
+import PetDelete from './components/pages/Delete/PetDelete';
 
 import ProtectedRoute from './components/miscelaneous/ProtectedRoute/ProtectedRoute';
 
@@ -48,6 +49,11 @@ const App = () => {
       <Route
         path="/my-pets-edit/:petId"
         element={<ProtectedRoute isLogged={isUserLogged} Page={EditPet} />}
+      />
+
+      <Route
+        path="/my-pets-delete/:petId"
+        element={<ProtectedRoute isLogged={isUserLogged} Page={PetDelete} />}
       />
     </Routes>
   );

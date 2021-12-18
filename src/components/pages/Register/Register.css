@@ -1,0 +1,23 @@
+.register-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    color: #ffcc13;
+    margin-top: 30px;
+}
+
+.register-text{
+    font-size: 24px;
+    margin-top: 110px;
+    
+}
+.register-submit-button {
+    width: 100%;
+    background-color: #ffcc13;
+    border: white;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    
+}

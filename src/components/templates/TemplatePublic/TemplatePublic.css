@@ -1,0 +1,18 @@
+.template-public-container {
+    display: flex;
+}
+
+.template-public-background {
+    width: 65%;
+    max-width: 80%;
+    height: 100vh;
+    background-image: url('../../../images/foto1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.template-public-content {
+    flex: 1;
+    padding: 50px;
+}

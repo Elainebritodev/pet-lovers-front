@@ -1,0 +1,25 @@
+.template-private-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color:#ffcc13 ;
+}
+
+.template-private-navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.template-private-pets-logo {
+    font-size: 32px !important;
+}
+
+.template-private-nav-links a + a {
+    margin-left: 50px;
+}
+
+.template-private-content {
+    padding: 80px 100px;
+}
